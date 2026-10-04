@@ -1,3 +1,6 @@
+import { useLocalStorage } from "./hooks/useLocalStorage";
+
 export default function App() {
-  return <h1>Hello</h1>;
+  const [n, setN] = useLocalStorage("test", 0);
+  return <button onClick={() => setN(n + 1)}>Clicked {n}</button>;
 }
